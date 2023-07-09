@@ -4,7 +4,7 @@
 $ npm i
 
 $ node
-> .load main.js
->
+> .load data.js
+> .load code.js
 ```
 
