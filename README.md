@@ -3,8 +3,6 @@
 ```
 $ npm i
 
-$ node
-> .load data.js
-> .load code.js
+$ node code.js
 ```
 

@@ -1,4 +1,6 @@
-const _ = require("lodash")
+import _ from "lodash"
+
+import { libraryData, userManagementData, catalogData } from "./data.js"
 
 class Catalog {
   static authorNames(catalogData, book) {
@@ -19,7 +21,7 @@ class Catalog {
   }
 
   static searchBooksByTitle(catalogData, query) {
-    const allBooks = _.values(_.get(catalogData, "booksByIsbn"))
+    const allBooks = _.values(_.get(catalogData, "booksByIsbn")) // bookByIsbn の中身を取り出す
     const matchingBooks = _.filter(allBooks, (book) => _.get(book, "title").includes(query))
     const bookInfos = _.map(matchingBooks, (book) => Catalog.bookInfo(catalogData, book))
     return bookInfos
@@ -35,7 +37,6 @@ class Library {
   }
 }
 
-Library.searchBooksByTitleJSON(libraryData, "Watch")
 
 class UserManagement {
   static isLibrarian(userManagement, email) {
@@ -52,4 +53,8 @@ class UserManagement {
 }
 
 
+console.log("Library search Watch", Library.searchBooksByTitleJSON(libraryData, "Watch"))
 
+
+console.log("isLibrarian : ", UserManagement.isLibrarian(userManagementData, "franck@gmail.com"))
+console.log("VIP? ", UserManagement.isVIPMember(userManagementData, "alice@gmail.com"))

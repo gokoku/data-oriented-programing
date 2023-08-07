@@ -1,6 +1,14 @@
 
-const catalogData = {
+export const catalogData = {
+
   "booksByIsbn": {
+
+    "978-1982137274": {
+      "isbn": "978-1982137274",
+      "title": "7 Habits of Highly Effective People",
+      "authorIds": [ "sean-covey", "stephen-covey" ]
+    },
+
     "978-1779501127": {
       "isbn": "978-1779501127",
       "title": "Watchmen",
@@ -20,11 +28,13 @@ const catalogData = {
       ]
     }
   },
+
   "authorsById": {
     "alan-moore": {
       "name": "Alan Moore",
       "bookIsbns": ["978-779501127"]
     },
+
     "dave-gibbons": {
       "name": "Dave Gibbons",
       "bookIsbns": ["978-1779501127"]
@@ -32,11 +42,7 @@ const catalogData = {
   }
 }
 
-const libraryData = {
-  "catalog" : catalogData
-}
-
-const userManagementData = {
+export const userManagementData = {
   "librariansByEmail": {
     "franck@gmail.com": {
       "email": "franck@gmail.com",
@@ -87,4 +93,10 @@ const userManagementData = {
       ]
     }
   }
+}
+
+
+export const libraryData = {
+  "catalog" : catalogData,
+  "userManagementData" : userManagementData
 }
